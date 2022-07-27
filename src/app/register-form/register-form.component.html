@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<div class="register">
+    <h2>Register Form</h2>
+    <form  (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">First name</label>
+            <input type="email" #name="ngModel" required class="form-control" id="exampleInputEmail1" name="firstname"[(ngModel)] = "user.firstname" aria-describedby="emailHelp">
+            <div *ngIf="(name.touched || name.dirty) && name.invalid" class="alert alert-danger">
+                <div *ngIf="name.errors?.['required']">
+                First name should not be empty.
+            </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Last name</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" name = "lastname"[(ngModel)] = "user.lastname"aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text"></div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" class="form-control"  id="exampleInputEmail1"  [(ngModel)] = "user.email" name= "email" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text"></div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Phone</label>
+            <input type="phone" class="form-control"  id="exampleInputEmail1" [(ngModel)] = "user.phone" name = "phone"aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text"></div>
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" [(ngModel)] = "user.password" name = "password"id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Check Password</label>
+            <input type="password" class="form-control" [(ngModel)] = "user.checkPassword" name = "lastname" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+          <label class="alert alert-danger" *ngIf='message!=""'>{{message}}</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
