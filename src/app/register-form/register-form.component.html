@@ -36,7 +36,9 @@
           </div>
           <div class="mb-3">
           <label class="alert alert-danger" *ngIf='message!=""'>{{message}}</label>
+          <label  *ngIf='success!=""'>{{success}}</label>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" style="background-color: #d9381e; border:#d9381e">Submit</button>
+        <a class="create" routerLink="/login"><b>Already have an account? Sign in.</b></a>
       </form>
 </div>

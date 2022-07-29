@@ -15,10 +15,13 @@ export class RegisterFormComponent implements OnInit {
   
   ngOnInit(): void{}
   message = "";
+  success="";
   onSubmit() {
-   
+    this.message = "";
+    this.success="";
     this.userService.addUser(this.user).subscribe(data=>
       {console.log(data);
+        this.success="New account created successfully";
       },
       error=>{
         console.log(error);

@@ -5,5 +5,6 @@ export class User {
     phone!: string;
     password!: string;
     checkPassword!: string;
+    role!:String;
   
 }

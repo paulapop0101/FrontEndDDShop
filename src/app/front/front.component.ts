@@ -9,9 +9,7 @@ import { UserService } from '../user/user.service';
 export class FrontComponent implements OnInit {
 
   constructor(private userService: UserService) { 
-    userService.getUsers().subscribe(data=>{
-      console.log(data);
-    })
+    
   }
 
   ngOnInit(): void {

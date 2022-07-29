@@ -8,13 +8,20 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FrontComponent } from './front/front.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterFormComponent,
     NavbarComponent,
-    FrontComponent
+    FrontComponent,
+    LoginComponent,
+    ProfileComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

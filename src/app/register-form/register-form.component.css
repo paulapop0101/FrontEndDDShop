@@ -10,3 +10,12 @@
   border-radius: 3px;
 
 }
+.create{
+  cursor: pointer;
+  float: right;
+  color: rgb(30, 30, 30)!important;
+  
+}
+.create  :hover{
+  text-decoration: underline;
+}
