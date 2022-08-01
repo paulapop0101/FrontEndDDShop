@@ -22,4 +22,8 @@ export class UserService {
   logUser(user: User): Observable<any>{
     return this.http.post("http://localhost:8080/api/logUser",user);
   }
+  updateUser(userid : number, user :Partial<{ firstname: string | null; lastname: string | null; phone: string | null;} >): Observable<Object>{
+    let url = "http://localhost:8080/api/updateUser" + "/" + userid;
+    return this.http.put(url,user);
+  }
 }

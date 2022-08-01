@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router} from '@angular/router';
 import { User } from '../user/user';
 import { UserService } from '../user/user.service';
-
+import decode from 'jwt-decode';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -19,11 +19,13 @@ export class LoginComponent implements OnInit {
   response : String = "";
   onSubmit(){
     this.response = "";
-    console.log(this.user);
+
     this.userService.logUser(this.user).subscribe(data=>
       {console.log(data);
-        localStorage.setItem('user', JSON.stringify(this.user));
-        this.router.navigate(['profile']);
+        localStorage.setItem('user', JSON.stringify(data));
+        if(data.role=='admin')
+          this.router.navigate(['admin']);
+        else this.router.navigate(['profile']);
       },
       error=>{
         console.log(error);

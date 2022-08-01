@@ -3,11 +3,11 @@
   margin: auto;
   top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
   width: 30em;
-  height: 100px;
+  height: max-content;
   border-radius: 3px;
+  padding-bottom: 5em;
 
 }
 .create{

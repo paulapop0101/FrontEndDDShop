@@ -11,6 +11,7 @@ import {
   RoleGuardService as RoleGuard 
 } from './auth/role-guard.service';
 import { AdminComponent } from './admin/admin.component';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 const routes: Routes = [
   {path : '',component: FrontComponent},
   {path : 'register', component: RegisterFormComponent},
@@ -18,11 +19,22 @@ const routes: Routes = [
   { 
     path: 'profile',
     component: ProfileComponent,
-    canActivate: [AuthGuard] 
+    canActivate: [AuthGuard],
+    data: { 
+      expectedRole: 'normal_user'
+    } 
   },
   { 
     path: 'admin', 
     component: AdminComponent, 
+    canActivate: [RoleGuard], 
+    data: { 
+      expectedRole: 'admin'
+    } 
+  },
+  { 
+    path: 'admin-profile', 
+    component: AdminProfileComponent, 
     canActivate: [RoleGuard], 
     data: { 
       expectedRole: 'admin'

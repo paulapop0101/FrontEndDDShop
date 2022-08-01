@@ -12,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AdminComponent } from './admin/admin.component';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { AdminComponent } from './admin/admin.component';
     FrontComponent,
     LoginComponent,
     ProfileComponent,
-    AdminComponent
+    AdminComponent,
+    AdminProfileComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
