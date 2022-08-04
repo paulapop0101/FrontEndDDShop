@@ -7,10 +7,11 @@
     height: auto;
 }
 .nav{
-    background-color: #2f323e;
+    background-color: #ffffff;
     width: 100%;
     height: 3.5em;
     justify-content: center; align-items: center;
+    z-index: 20;
     
 }
 #brand{
@@ -21,7 +22,7 @@
 }
 .logout{
     text-decoration: none;
-    color: white !important;
+    color: black!important;
     text-align: right;
     width: -webkit-fill-available;
     position: absolute;
@@ -31,24 +32,30 @@
     cursor: pointer;
 }
 .title{
-    background-color: white;
-    width: auto;
-    height: 3.5em;
+    background-color: #d9381e;
+    width: -webkit-fill-available;
+    height: 7em;
+    position: absolute;
 }
 .content-back{
     min-height: calc(100vh - 10.5em);
     background-color: #edf1f5;
-    z-index: 5;
     padding: 25px;
+    padding-left:4em;
+    padding-right: 4em;
 }
 .content{
     min-height: 10em;
     background-color: white;
-    width: auto;
+    width: fit-content;
+    min-width: 30em;
     align-items: center;
     align-content: center;
     justify-content: center;
-    display: flex;
+    position: relative;
+    margin-top:4em;
+    border-radius: 10px;
+    
 }
 .footer{
     height: 3.5em;
@@ -61,11 +68,11 @@
     color: gray;
 }
 #title{
-    line-height: 3.5em;
+    line-height: 2.5em;
     padding-left: 1em;
-    font-weight: 700;
-    font-size: 1em;
-    color: #2f323e;
+    font-weight: 500;
+    font-size: 2em;
+    color: white;
 }
 
 

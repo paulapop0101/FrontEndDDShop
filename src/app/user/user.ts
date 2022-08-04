@@ -7,5 +7,9 @@ export class User {
     password!: string;
     checkPassword!: string;
     role!:String;
-  
+    streetLine! :String;
+    postalCode! : String;
+    city! :String;
+    county! :String;
+    country! :String;
 }
