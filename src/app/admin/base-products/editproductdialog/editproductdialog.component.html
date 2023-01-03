@@ -1,0 +1,31 @@
+<div mat-dialog-content>
+<form class="myform" (ngSubmit)="onSubmit()" >
+    <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" [(ngModel)] = "product.name" name= "name" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="description"  [(ngModel)] = "product.description" name= "description" required></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Subcategory</mat-label>
+        <mat-select  [(ngModel)] = "product.subcategory"  name= "pokemon"  required>
+            <mat-optgroup *ngFor="let group of category" [label]="group.name"  >
+              <mat-option *ngFor="let pokemon of group.subcategories" [value]=pokemon>
+                {{pokemon.name}}
+              </mat-option>
+            </mat-optgroup>
+          </mat-select>
+    </mat-form-field>
+    <!-- <mat-error>{{error_message}}</mat-error> -->
+    
+    <button mat-raised-button type="submit" class="mybutton">Edit product</button>
+    
+    
+
+</form>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+  </div>

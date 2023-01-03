@@ -1,43 +1,44 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegisterFormComponent } from './register-form/register-form.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FrontComponent } from './front/front.component';
+import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
+import { AngularMaterialModule } from './angular-material.module';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './login/login.component';
+
 import { ProfileComponent } from './profile/profile.component';
-import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
-import { AdminComponent } from './admin/admin.component';
-import { AdminProfileComponent } from './admin-profile/admin-profile.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { AdminCategoriesComponent } from './admin-categories/admin-categories.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {DialogModule} from '@angular/cdk/dialog';
+import { DigitOnlyModule } from '@uiowa/digit-only';
+
+import { AdminModule } from './admin/admin.module';
+import { UserModule } from './user/user.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterFormComponent,
-    NavbarComponent,
-    FrontComponent,
-    LoginComponent,
-    ProfileComponent,
-    AdminComponent,
-    AdminProfileComponent,
-    SidebarComponent,
-    AdminCategoriesComponent
-    
+    ProfileComponent
   ],
   imports: [
+    AdminModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgMultiSelectDropDownModule.forRoot(),
+    BrowserAnimationsModule,
+    DialogModule,
+    DigitOnlyModule,
+    AngularMaterialModule,
+    UserModule
+    
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [AngularMaterialModule]
 })
+
 export class AppModule { }

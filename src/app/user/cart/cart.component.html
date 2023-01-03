@@ -1,0 +1,116 @@
+<app-navbar [itemsCount]="cartCount"></app-navbar>
+<div class="first-container">
+    <div class="cart-container">
+        <div class="shoppinglist disable-text-selection">
+                    <div class="cartItemsCounter disable-text-selection">Cart Items({{cartCount}})</div>
+                    <div class="itemWrapper" *ngFor="let entry of cart.entries;let i = index">
+                    <div class="product">
+                        <div class="productImage">
+                            <img class="image" src="../../../assets/pants.jpg">
+                        </div>
+                        <div class="productDetails disable-text-selection">
+                            <h1 class="title">{{entry.name}}</h1>
+                            <table class="detailsTable">
+                                <tr *ngFor="let assignedValue of entry.assignedValueDTOList">
+                                    <td class="attributes">
+                                        {{assignedValue.attribute.name}}
+                                    </td>
+                                    <td class="values">
+                                        {{assignedValue.value.value}}
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="attributes">
+                                        Pret
+                                    </td>
+                                    <td class="values">
+                                        {{entry.price | currency}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="attributes">
+                                        Quantity
+                                    </td>
+                                    <td class="values">
+                                        <ul class="quantity">
+                                            <li class="quantityItem">
+                                                <a (click)="changeQuantity(-1,entry.quantity,i)" style="cursor: pointer;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"/>
+                                              </svg>
+                                            </a></li>
+                                            <li class="quantityItem">{{entry.quantity}}</li>
+                                            <li class="quantityItem">
+                                                <a (click)="changeQuantity(1,entry.quantity,i)" style="cursor: pointer;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                                              </svg>
+                                            </a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="editbuttons">
+                                <a (click)="openDialog(entry)" style="margin-right: 1em">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                        <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                                    </svg>
+                                    Edit
+                                </a>
+                                <a (click)="removeItem(entry.id)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                                      </svg>
+                                    Remove  
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="productSubtotal"> {{entry.totalPrice | currency}} </div>
+                    </div>
+                    
+        </div>
+        <div class="summary">
+            <div class="summary-title">Summary</div>
+            <div class="subtotal">
+                <ul class="summary-details">
+                    <li>
+                        <span>Subtotal</span>
+                        <span class="price">${{cart.total_price}}</span>
+                    </li>
+                    <li>
+                        <span>Shipping fee</span>
+                        <span class="price">$10</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="discount">
+                <ul class="summary-details">
+                    <li>
+                        <form class="example-form">
+
+                            <mat-form-field class="example-full-width">
+                              <input type="tel" matInput placeholder="Discount code">
+                              <mat-icon matSuffix>></mat-icon>
+                            </mat-form-field>
+                            
+                          </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="total">
+                <ul class="summary-details">
+                    <li style="padding-bottom:10px">
+                        <span>Total</span>
+                        <span class="price">${{cart.total_price}}</span>
+                    </li>
+                    <li>
+                        <button mat-raised-button class="checkoutbutton">Proceed to Checkout</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+</div>

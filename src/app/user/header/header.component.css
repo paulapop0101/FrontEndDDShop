@@ -1,0 +1,24 @@
+.brand{
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.75rem;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #212529;
+}
+#nav1{
+    background-color: white;
+    padding-top: 1.5em;
+    width: 100%;
+    max-width: 1280px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    color:black;
+}
+.mat-badge-small.mat-badge-above .mat-badge-content{
+    top: -1px;
+    right: -13px;
+}

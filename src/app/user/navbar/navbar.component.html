@@ -1,0 +1,37 @@
+
+<div class="wrap">
+<app-header [itemsCount]="itemsCount"></app-header>
+<div class="navcontainer" (mouseleave)="hideSucbategories()">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav2">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item" *ngFor="let category of categories">
+                  <a class="nav-link" (mouseover)="showSucbategories(category.subcategories)">
+                      {{category.name}}
+                  </a>
+                </li>
+
+              </ul>
+        </div>
+      </nav>
+      <div *ngIf="showSubcategory" class="subcategories-container">
+        <mat-card>
+          <mat-card-content>
+            <ul style="list-style-type: none;">
+              <li *ngFor="let subcategory of subcategories">
+                <a style="cursor:pointer" (click)="getProducts(subcategory)">{{subcategory.name}}</a>
+              </li>
+            </ul>
+          </mat-card-content>
+        </mat-card>
+      </div>
+</div>
+</div> 
+
+
+

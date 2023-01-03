@@ -1,0 +1,59 @@
+<app-header [itemsCount]="itemsCount" ></app-header>
+<div class="product-container">
+    <div class="image-container">
+        <mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'" [interval]=10000000>
+            <mdb-carousel-item>
+              <img
+              src="../../assets/pants.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </mdb-carousel-item>
+            <mdb-carousel-item>
+              <img
+              src="../../assets/slider_img1.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+              
+            </mdb-carousel-item>
+            <mdb-carousel-item>
+              <img
+              src="../../assets/pants.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+              
+            </mdb-carousel-item>
+          </mdb-carousel>
+    </div>
+    <div class="details-container">
+        <h1>{{variant.name}}</h1>
+        <h3> {{variant.price|currency}}</h3>
+        <div class="colors">
+            <h4>Colors</h4>
+            <div class="colorsList">
+                
+                    <a (click)="colorSelect(i,color)" *ngFor="let color of colors;let i = index" >
+                        <button class="color-button" [attr.data-cy]="'color:'+color.value"
+                    [style.border]="colorsPressed[i] == true ? '2px solid black' : '1px solid #b4b4b4'"
+                    [ngStyle]="{'backgroundColor':color.value}"
+                    
+                   ></button></a>
+                
+            </div>
+        </div>
+        <div class="sizes">
+            <h4>Sizes</h4>
+            <div class="sizeList">
+                <a (click)="sizeSelect(i)" *ngFor="let size of sizes;let i = index" >
+                    <button class="size-button" [attr.data-cy]="'size:'+size.value"
+                [style.border]="sizesPressed[i] == true ? '2px solid black' : '1px solid #b4b4b4'">
+                <span class="button-text">{{size.value}}</span></button></a>
+            </div>
+        </div>
+        <div class="size-guide">Size guide</div>
+        <a (click)="addToCart()"><button mat-raised-button class="addbutton">Add to cart</button></a>
+    </div>
+</div>
+

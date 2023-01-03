@@ -1,0 +1,43 @@
+
+#item{
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.navcontainer{
+   background-color: #212529;
+    
+}
+
+#nav2{
+    width: 100%;
+    max-width: 1280px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.subcategories-container{
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+}
+.mat-card{
+    background-color: white;
+    width: 100%;
+}
+.mat-card-content{
+    border-radius: 0;
+    width: 100%;
+    max-width: 1280px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mat-badge-content {
+    position: initial;
+}

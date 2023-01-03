@@ -1,0 +1,46 @@
+/* .back-content{
+     display: flex;
+    justify-content: center; 
+} */
+.content {
+    /* width: 60em; */
+    padding: 40px;
+}
+.mat-card{
+    box-shadow: none;
+    border-radius: 0%;
+}
+.mat-card-image{
+    height: 18em;
+    margin-bottom: 0;
+}
+.mat-card-content{
+    color: gray;
+    text-align: center;
+    font-size: xx-small;
+    font-weight: 200;
+}
+.price{
+    font-weight: 500;
+    color:black;
+    font-size: larger;
+}
+.image-container{
+    position: relative;
+}
+.wishlist_icon{
+    position: absolute;
+    width: 100%;
+}
+.icon{
+    float: right;
+    margin-top: 5px;
+}
+.disable-text-selection {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

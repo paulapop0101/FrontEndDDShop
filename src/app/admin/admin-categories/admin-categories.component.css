@@ -1,0 +1,56 @@
+@import url('../admin-dashboard/admin-dashboard.component.css');
+.content-back{
+    min-height: calc(100vh - 7em);
+    background-color: white;
+    padding: 25px;
+    padding-left:4em;
+    padding-right: 4em;
+    display: flex;
+    justify-content: center;
+}
+.content{
+    display: grid;
+    justify-content: center;
+    width: auto;
+}
+button{
+    background-color:transparent;
+    border-radius: 15%;
+    border: none;
+    width: fit-content;
+}
+.catlist{
+    min-width: 40em;
+    padding:2em;
+}
+.list-group-item{
+    position: relative;
+    display: block;
+    padding: .5rem 1rem;
+    color: #212529;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+}
+.subtitle{
+    padding: 2em;
+    padding-bottom: 0;
+    width: auto;
+}
+
+.categ-list-subtitle{
+    margin-right: 15px;
+    font-weight: 500;
+}
+ input[type=text]{
+    border: none;
+    border-bottom: 2px solid crimson;
+}
+/* input[type='text']:focus {
+    border: 3px solid rgb(5, 15, 130);
+  } */
+
+input[type=text]:active,input[type=text]:focus {
+outline: none;
+border-bottom: 2px solid crimson;
+}

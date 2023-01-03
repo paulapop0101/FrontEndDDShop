@@ -1,0 +1,47 @@
+@import url('../admin-dashboard/admin-dashboard.component.css');
+.content-back{
+    min-height: calc(100vh - 7em);
+    padding: 25px;
+    padding-left:4em;
+    padding-right: 4em;
+    display: flex;
+    justify-content: center;
+
+}
+.content{
+    width: 50em;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: transparent;
+    margin-top:6em;
+    box-shadow: none;
+
+}
+.addLabel{
+  font-weight: 500;
+  font-size: large;
+  border-bottom: 2px solid #d9381e;
+}
+table {
+    width: 100%;
+
+  }
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  .mybutton{
+    width: max-content;
+    margin-bottom: 1em;
+  }
+.deletebutton{
+    margin: 0;
+  }
+  .tablebutton{
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    margin-right: 5px;
+  }
